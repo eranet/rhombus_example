@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/l1va/rhombus/gorhom"
+	"github.com/l1va/rhombus/rhomgo"
 )
 
 type Position struct {
@@ -9,14 +9,14 @@ type Position struct {
 }
 
 func main() {
-	c := gorhom.LocalJSONConnection()
+	c := rhomgo.LocalJSONConnection()
 	defer c.Close()
 
 	robot := "mymanip"
-	joints := []string{//"base_revolute",
+	joints := []string{ //"base_revolute",
 		"first_rotation", "second_rotation", "third_rotation", "fourth_rotation", "fifth_rotation"}
 
-	rate := gorhom.NewRate(200)
+	rate := rhomgo.NewRate(200)
 	for i := 1.0; i > -1; i -= 0.001 {
 
 		for _, name := range joints {

@@ -13,7 +13,7 @@
 
   <model name="mymanip">
 
-   <plugin name="joint_state_publisher" filename="rhombus_gazebo_plugin.so"/>
+   <plugin name="any_plugin_name" filename="librhombus_gazebo_plugin.so"/>
 
     <link name="base">
       <!--<gravity>0</gravity>-->
