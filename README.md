@@ -2,6 +2,12 @@
 
 An example app for ROS competitor https://github.com/l1va/rhombus
 
+
+Convert urdf to sdf:
+
+gz sdf -p rabbit.urdf > rabbit.sdf
+
+
 ### Run: 
     ./launch_world.sh
     

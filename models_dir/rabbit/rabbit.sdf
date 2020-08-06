@@ -1,0 +1,240 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+    <model name='rabbit'>
+
+<!--        <plugin name="any_plugin_name" filename="librhombus_gazebo_plugin.so"/>-->
+
+        <joint name="grounding" type="fixed">
+            <parent>world</parent>
+            <child>torso</child>
+            <pose>0 0 0 0 0 0</pose>
+        </joint>
+
+        <link name='torso'>
+            <pose>0 0 0 0 -0 0</pose>
+            <inertial>
+                <pose>0 0 0.24 0 -0 0</pose>
+                <mass>12</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>1.33</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name="torso_collision">
+                <geometry>
+                    <cylinder>
+                        <length>0.63</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name='torso_visual'>
+                <pose>0 0 0.315 0 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.63</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <link name='left_thigh'>
+            <pose>0 0 0 0 -0 0</pose>
+            <inertial>
+                <pose>0 0 0.11 0 -0 0</pose>
+                <mass>6.8</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.47</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name="left_thigh_collision">
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name='left_thigh_visual'>
+                <pose>0 0 0.2 0 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <joint name='q1_left' type='revolute'>
+            <child>left_thigh</child>
+            <parent>torso</parent>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>-1e+16</lower>
+                    <upper>1e+16</upper>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='left_shin'>
+            <pose>0 0 0.4 0 -0 0</pose>
+            <inertial>
+                <pose>0 0 0.24 0 -0 0</pose>
+                <mass>3.2</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.2</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name="left_shin_collision">
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name='left_shin_visual'>
+                <pose>0 0 0.2 0 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <joint name='q2_left' type='revolute'>
+            <child>left_shin</child>
+            <parent>left_thigh</parent>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>-1e+16</lower>
+                    <upper>1e+16</upper>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='right_thigh'>
+            <pose>0 0 0 0 -0 0</pose>
+            <inertial>
+                <pose>0 0 0.11 0 -0 0</pose>
+                <mass>6.8</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.47</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name="right_thigh_collision">
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name='right_thigh_visual'>
+                <pose>0 0 0.2 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <joint name='q1_right' type='revolute'>
+            <child>right_thigh</child>
+            <parent>torso</parent>
+            <axis>
+                <initial_position>0.5</initial_position>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>-1e+16</lower>
+                    <upper>1e+16</upper>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+        <link name='right_shin'>
+            <pose>0 0 0.4 0 -0 0</pose>
+            <inertial>
+                <pose>0 0 0.24 0 -0 0</pose>
+                <mass>3.2</mass>
+                <inertia>
+                    <ixx>0</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.2</iyy>
+                    <iyz>0</iyz>
+                    <izz>0</izz>
+                </inertia>
+            </inertial>
+            <collision name="right_shin_collision">
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name='right_shin_visual'>
+                <pose>0 0 0.2 0 -0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.4</length>
+                        <radius>0.025</radius>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <joint name='q2_right' type='revolute'>
+            <child>right_shin</child>
+            <parent>right_thigh</parent>
+            <axis>
+                <initial_position>1.0</initial_position>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>-1e+16</lower>
+                    <upper>1e+16</upper>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+            </axis>
+        </joint>
+    </model>
+</sdf>

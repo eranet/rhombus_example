@@ -1,432 +1,432 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
-  <world name="default">
+    <world name="default">
 
-    <!-- Ground Plane -->
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
+        <!-- Ground Plane -->
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
 
-    <include>
-      <uri>model://sun</uri>
-    </include>
+        <include>
+            <uri>model://sun</uri>
+        </include>
 
-  <model name="mymanip">
+        <model name="mymanip">
 
-   <plugin name="any_plugin_name" filename="librhombus_gazebo_plugin.so"/>
+            <plugin name="any_plugin_name" filename="librhombus_gazebo_plugin.so"/>
 
-    <link name="base">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 0.07 0 0 0</pose>
-      <inertial>
-        <mass>10.0</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0083</izz>
-        </inertia>
-      </inertial>
-      <collision name="base_collision">
-        <geometry>
-          <box>
-            <size>0.500 0.500 0.04</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="base_visual">
-        <geometry>
-          <box>
-            <size>0.500 0.500 0.04</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Blue</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <link name="first_link">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 0.2 0 0 0</pose>
-      <inertial>
-        <mass>2.0</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0345</izz>
-        </inertia>
-      </inertial>
-      <collision name="first_link_collision">
-        <geometry>
-          <cylinder>
-            <radius>0.09</radius>
-            <length>0.31</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="first_link_visual">
-        <geometry>
-          <cylinder>
-            <radius>0.09</radius>
-            <length>0.31</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Red</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <link name="second_link">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 0.345 0 0 0</pose>
-      <inertial>
-        <mass>0.6</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0083</izz>
-        </inertia>
-      </inertial>
-      <collision name="second_link_collision">
-        <pose>0 0 0.05 1.57079633 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.04</radius>
-            <length>0.12</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="second_link_visual">
-        <pose>0 0 0.05 1.57079633 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.04</radius>
-            <length>0.12</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Blue</name>
-          </script>
-        </material>
-      </visual>
-      <collision name="second_link_arm_collision">
-        <pose>0 0 0.2 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.1 0.12 0.28</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="second_link_arm_visual">
-        <pose>0 0 0.2 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.1 0.12 0.28</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Red</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <link name="third_link">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 0.625 0 0 0</pose>
-      <inertial>
-        <mass>0.3</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0083</izz>
-        </inertia>
-      </inertial>
-      <collision name="third_link_collision">
-        <pose>0 0 0.07 1.57079633 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.035</radius>
-            <length>0.12</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="third_link_visual">
-        <pose>0 0 0.07 1.57079633 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.035</radius>
-            <length>0.12</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Blue</name>
-          </script>
-        </material>
-      </visual>
-      <collision name="third_link_arm_collision">
-        <pose>0 0 0.15 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.14 0.14 0.1</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="third_link_arm_visual">
-        <pose>0 0 0.15 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.14 0.14 0.1</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Red</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <link name="fourth_link">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 0.875 0 0 0</pose>
-      <inertial>
-        <mass>0.2</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0083</izz>
-        </inertia>
-      </inertial>
-      <collision name="fourth_link_collision">
-        <geometry>
-          <box>
-            <size>0.1 0.09 0.13</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="fourth_link_visual">
-        <geometry>
-          <box>
-            <size>0.1 0.09 0.13</size>
-          </box>
-        </geometry>
-      </visual>
-    </link>
-    <link name="fifth_link">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 0.965 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0083</izz>
-        </inertia>
-      </inertial>
-      <collision name="fifth_link_collision">
-        <pose>0 0 0 1.57079633 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.035</radius>
-            <length>0.14</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="fifth_link_visual">
-        <pose>0 0 0 1.57079633 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.035</radius>
-            <length>0.14</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Red</name>
-          </script>
-        </material>
-      </visual>
-      <collision name="fifth_link_arm_collision">
-        <pose>0 0 0.05 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.08 0.07 0.07</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="fifth_link_arm_visual">
-        <pose>0 0 0.05 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.08 0.07 0.07</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Green</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <link name="sixth_link">
-      <!--<gravity>0</gravity>-->
-      <pose>0 0 1.05 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-        <inertia>
-          <ixx>0.0083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0083</izz>
-        </inertia>
-      </inertial>
-      <collision name="sixth_link_collision">
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>0.05</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="sixth_link_visual">
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>0.05</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Yellow</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <joint name="base_revolute" type="revolute">
-      <parent>base</parent>
-      <child>first_link</child>
-      <axis>
-        <dynamics>
-          <damping>1.000000</damping>
-          <friction>0.000000</friction>
-        </dynamics>
-        <limit>
-          <lower>-2.96705973</lower>
-          <upper>2.96705973</upper>
-        </limit>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-    <joint name="first_rotation" type="revolute">
-      <parent>first_link</parent>
-      <child>second_link</child>
-      <pose>0 0 0.05 0 0 0</pose>
-      <axis>
-        <dynamics>
-          <damping>1.000000</damping>
-          <friction>0.000000</friction>
-        </dynamics>
-        <limit>
-          <lower>-2.96705973</lower>
-          <upper>0.872664626</upper>
-        </limit>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-    <joint name="second_rotation" type="revolute">
-      <parent>second_link</parent>
-      <child>third_link</child>
-      <pose>0 0 0.07 0 0 0</pose>
-      <axis>
-        <dynamics>
-          <damping>1.000000</damping>
-          <friction>0.000000</friction>
-        </dynamics>
-        <limit>
-          <lower>-3.14159265</lower>
-          <upper>2.70526034</upper>
-        </limit>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-    <joint name="third_rotation" type="revolute">
-      <parent>third_link</parent>
-      <child>fourth_link</child>
-      <axis>
-        <dynamics>
-          <damping>1.000000</damping>
-          <friction>0.000000</friction>
-        </dynamics>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-    <joint name="fourth_rotation" type="revolute">
-      <parent>fourth_link</parent>
-      <child>fifth_link</child>
-      <axis>
-        <dynamics>
-          <damping>1.000000</damping>
-          <friction>0.000000</friction>
-        </dynamics>
-        <limit>
-          <lower>-1.04719755</lower>
-          <upper>1.04719755</upper>
-        </limit>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-    <joint name="fifth_rotation" type="revolute">
-      <parent>fifth_link</parent>
-      <child>sixth_link</child>
-      <axis>
-        <dynamics>
-          <damping>1.000000</damping>
-          <friction>0.000000</friction>
-        </dynamics>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
+            <link name="base">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 0.07 0 0 0</pose>
+                <inertial>
+                    <mass>10.0</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0083</izz>
+                    </inertia>
+                </inertial>
+                <collision name="base_collision">
+                    <geometry>
+                        <box>
+                            <size>0.500 0.500 0.04</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="base_visual">
+                    <geometry>
+                        <box>
+                            <size>0.500 0.500 0.04</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Blue</name>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <link name="first_link">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 0.2 0 0 0</pose>
+                <inertial>
+                    <mass>2.0</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0345</izz>
+                    </inertia>
+                </inertial>
+                <collision name="first_link_collision">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.09</radius>
+                            <length>0.31</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="first_link_visual">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.09</radius>
+                            <length>0.31</length>
+                        </cylinder>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Red</name>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <link name="second_link">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 0.345 0 0 0</pose>
+                <inertial>
+                    <mass>0.6</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0083</izz>
+                    </inertia>
+                </inertial>
+                <collision name="second_link_collision">
+                    <pose>0 0 0.05 1.57079633 0 0</pose>
+                    <geometry>
+                        <cylinder>
+                            <radius>0.04</radius>
+                            <length>0.12</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="second_link_visual">
+                    <pose>0 0 0.05 1.57079633 0 0</pose>
+                    <geometry>
+                        <cylinder>
+                            <radius>0.04</radius>
+                            <length>0.12</length>
+                        </cylinder>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Blue</name>
+                        </script>
+                    </material>
+                </visual>
+                <collision name="second_link_arm_collision">
+                    <pose>0 0 0.2 0 0 0</pose>
+                    <geometry>
+                        <box>
+                            <size>0.1 0.12 0.28</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="second_link_arm_visual">
+                    <pose>0 0 0.2 0 0 0</pose>
+                    <geometry>
+                        <box>
+                            <size>0.1 0.12 0.28</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Red</name>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <link name="third_link">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 0.625 0 0 0</pose>
+                <inertial>
+                    <mass>0.3</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0083</izz>
+                    </inertia>
+                </inertial>
+                <collision name="third_link_collision">
+                    <pose>0 0 0.07 1.57079633 0 0</pose>
+                    <geometry>
+                        <cylinder>
+                            <radius>0.035</radius>
+                            <length>0.12</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="third_link_visual">
+                    <pose>0 0 0.07 1.57079633 0 0</pose>
+                    <geometry>
+                        <cylinder>
+                            <radius>0.035</radius>
+                            <length>0.12</length>
+                        </cylinder>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Blue</name>
+                        </script>
+                    </material>
+                </visual>
+                <collision name="third_link_arm_collision">
+                    <pose>0 0 0.15 0 0 0</pose>
+                    <geometry>
+                        <box>
+                            <size>0.14 0.14 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="third_link_arm_visual">
+                    <pose>0 0 0.15 0 0 0</pose>
+                    <geometry>
+                        <box>
+                            <size>0.14 0.14 0.1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Red</name>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <link name="fourth_link">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 0.875 0 0 0</pose>
+                <inertial>
+                    <mass>0.2</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0083</izz>
+                    </inertia>
+                </inertial>
+                <collision name="fourth_link_collision">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.09 0.13</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="fourth_link_visual">
+                    <geometry>
+                        <box>
+                            <size>0.1 0.09 0.13</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+            <link name="fifth_link">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 0.965 0 0 0</pose>
+                <inertial>
+                    <mass>0.1</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0083</izz>
+                    </inertia>
+                </inertial>
+                <collision name="fifth_link_collision">
+                    <pose>0 0 0 1.57079633 0 0</pose>
+                    <geometry>
+                        <cylinder>
+                            <radius>0.035</radius>
+                            <length>0.14</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="fifth_link_visual">
+                    <pose>0 0 0 1.57079633 0 0</pose>
+                    <geometry>
+                        <cylinder>
+                            <radius>0.035</radius>
+                            <length>0.14</length>
+                        </cylinder>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Red</name>
+                        </script>
+                    </material>
+                </visual>
+                <collision name="fifth_link_arm_collision">
+                    <pose>0 0 0.05 0 0 0</pose>
+                    <geometry>
+                        <box>
+                            <size>0.08 0.07 0.07</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="fifth_link_arm_visual">
+                    <pose>0 0 0.05 0 0 0</pose>
+                    <geometry>
+                        <box>
+                            <size>0.08 0.07 0.07</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Green</name>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <link name="sixth_link">
+                <!--<gravity>0</gravity>-->
+                <pose>0 0 1.05 0 0 0</pose>
+                <inertial>
+                    <mass>0.1</mass>
+                    <inertia>
+                        <ixx>0.0083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0083</izz>
+                    </inertia>
+                </inertial>
+                <collision name="sixth_link_collision">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.025</radius>
+                            <length>0.05</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
+                <visual name="sixth_link_visual">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.025</radius>
+                            <length>0.05</length>
+                        </cylinder>
+                    </geometry>
+                    <material>
+                        <script>
+                            <uri>file://media/materials/scripts/gazebo.material</uri>
+                            <name>Gazebo/Yellow</name>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <joint name="base_revolute" type="revolute">
+                <parent>base</parent>
+                <child>first_link</child>
+                <axis>
+                    <dynamics>
+                        <damping>1.000000</damping>
+                        <friction>0.000000</friction>
+                    </dynamics>
+                    <limit>
+                        <lower>-2.96705973</lower>
+                        <upper>2.96705973</upper>
+                    </limit>
+                    <xyz>0 0 1</xyz>
+                    <use_parent_model_frame>true</use_parent_model_frame>
+                </axis>
+            </joint>
+            <joint name="first_rotation" type="revolute">
+                <parent>first_link</parent>
+                <child>second_link</child>
+                <pose>0 0 0.05 0 0 0</pose>
+                <axis>
+                    <dynamics>
+                        <damping>1.000000</damping>
+                        <friction>0.000000</friction>
+                    </dynamics>
+                    <limit>
+                        <lower>-2.96705973</lower>
+                        <upper>0.872664626</upper>
+                    </limit>
+                    <xyz>0 1 0</xyz>
+                    <use_parent_model_frame>true</use_parent_model_frame>
+                </axis>
+            </joint>
+            <joint name="second_rotation" type="revolute">
+                <parent>second_link</parent>
+                <child>third_link</child>
+                <pose>0 0 0.07 0 0 0</pose>
+                <axis>
+                    <dynamics>
+                        <damping>1.000000</damping>
+                        <friction>0.000000</friction>
+                    </dynamics>
+                    <limit>
+                        <lower>-3.14159265</lower>
+                        <upper>2.70526034</upper>
+                    </limit>
+                    <xyz>0 1 0</xyz>
+                    <use_parent_model_frame>true</use_parent_model_frame>
+                </axis>
+            </joint>
+            <joint name="third_rotation" type="revolute">
+                <parent>third_link</parent>
+                <child>fourth_link</child>
+                <axis>
+                    <dynamics>
+                        <damping>1.000000</damping>
+                        <friction>0.000000</friction>
+                    </dynamics>
+                    <xyz>0 0 1</xyz>
+                    <use_parent_model_frame>true</use_parent_model_frame>
+                </axis>
+            </joint>
+            <joint name="fourth_rotation" type="revolute">
+                <parent>fourth_link</parent>
+                <child>fifth_link</child>
+                <axis>
+                    <dynamics>
+                        <damping>1.000000</damping>
+                        <friction>0.000000</friction>
+                    </dynamics>
+                    <limit>
+                        <lower>-1.04719755</lower>
+                        <upper>1.04719755</upper>
+                    </limit>
+                    <xyz>0 1 0</xyz>
+                    <use_parent_model_frame>true</use_parent_model_frame>
+                </axis>
+            </joint>
+            <joint name="fifth_rotation" type="revolute">
+                <parent>fifth_link</parent>
+                <child>sixth_link</child>
+                <axis>
+                    <dynamics>
+                        <damping>1.000000</damping>
+                        <friction>0.000000</friction>
+                    </dynamics>
+                    <xyz>0 0 1</xyz>
+                    <use_parent_model_frame>true</use_parent_model_frame>
+                </axis>
+            </joint>
 
-    </model>
-  </world>
+        </model>
+    </world>
 </sdf>
